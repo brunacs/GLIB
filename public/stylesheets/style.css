@@ -1,8 +1,80 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@charset "utf-8";
+*{
+    box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+html {
+    background-color: white;
+    color: black;
+    font-family: 'Krub', Helvetica, sans-serif;
+    font-size: 0.9em;
+    font-weight: : normal;
+}
+
+body {
+    background-color: white;
+    max-width: 960px;
+    min-width: 320px;
+    min-height: 100%; 
+    width: 100%;
+    margin: 0px auto;
+    padding: 5px;
+    overflow: auto;
+}
+
+body:after{	
+    clear: both;
+    content: "";
+    display: block;
+}
+
+header {
+    margin: 0;
+    width: 100%;
+}
+
+h1{
+    font-size: 2em;
+    font-family: 'Kodchasan', Verdana, sans-serif;
+    font-weight: bold;
+    color: rgb(139, 0, 0);
+}
+
+h2{
+    font-size: 1.3em;
+    font-family: 'Kodchasan', Verdana, sans-serif;
+    font-weight: bold;
+    color: rgb(139, 0, 0);
+}
+table {
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+    width: 100%;
+}
+table, tr, td, th {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    padding: 10px;
+}
+input, select, textarea {
+    border-radius: 5px;
+    border: 1px groove black;
+    padding: 3px;
+    color: black;
+    font-family: Verdana, Tahoma, Helvetica, sans-serif;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+input#submit, input#cancel {
+    text-align: center;
+}
+fieldset {
+    border: 1px groove;
+    border-color: gray; 
+    border-radius: 5px;
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+-webkit-flex-shrink: 0;
+flex-shrink: 0;
 }

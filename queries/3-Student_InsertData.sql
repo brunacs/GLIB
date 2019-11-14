@@ -1,0 +1,6 @@
+-- INSERTING DATA IN A TABLE
+INSERT	INTO STUDENT (FullName, Phone, Email, IsActive)
+		VALUES ('Bruna Costa e Silva', '778-512-1979', 'brunacs@gmail.com', 'Y');
+
+-- SELECTING / RETRIEVING DATA FROM A TABLE
+SELECT * FROM STUDENT;

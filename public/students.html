@@ -3,36 +3,39 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Students</title>        
+
+        <title>GLIB - Students</title>
+
+        <link href="stylesheets/style.css" rel="stylesheets" />
+         
     </head>
 
     <body>
         <form action="" method="post" enctype="text/plain" id="formStudent">
             <fieldset>
                 <br/>
-                            <table>
-                                <tr>
-                                    <td>Full Name: (*) </td>
-                                    <td><input type="text" name="fullName" id="fullName" maxlength="50" size="50" required /></td>
-                                </tr>
-                                <tr>
-                                    <td>E-mail: (*) </td>
-                                    <td><input type="email" name="email" id="email" maxlength="100" size="50"  placeholder="someone@somewhere.com" /></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <input type="submit" value="Submit" id="submit" />&nbsp;
-                                        <input type="reset" value="Cancel" id="cancel" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><br />(*) Required fields<br /></td>
-                                </tr>
-
-                            </table>
-                        </fieldset>
-                    </form>
-                    <div id="result">A</div>
+                <table>
+                    <tr>
+                        <td>Full Name: (*) </td>
+                        <td><input type="text" name="fullName" id="fullName" maxlength="50" size="50" required /></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail: (*) </td>
+                        <td><input type="email" name="email" id="email" maxlength="100" size="50" placeholder="someone@somewhere.com" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Submit" id="submit" />&nbsp;
+                            <input type="reset" value="Cancel" id="cancel" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br />(*) Required fields<br /></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+        <div id="result">&nbsp;</div>
     </body>
 </html>
 
