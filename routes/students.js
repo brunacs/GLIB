@@ -13,6 +13,7 @@ router.get('/', async function(req, res, next) {
   //res.send('respond with a resource');
 });
 
+/* POST Students in the table */
 router.post('/', async function(req, res, next) {
   console.log(req.body);
   let [row, field] = await mysql.query('insert into student set ?',req.body);

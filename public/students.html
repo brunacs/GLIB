@@ -7,7 +7,7 @@
         <title>GLIB - Students</title>
 
         <link href="stylesheets/style.css" rel="stylesheets" />
-         
+
     </head>
 
     <body>
@@ -21,7 +21,21 @@
                     </tr>
                     <tr>
                         <td>E-mail: (*) </td>
-                        <td><input type="email" name="email" id="email" maxlength="100" size="50" placeholder="someone@somewhere.com" /></td>
+                        <td><input type="email" name="email" id="email" maxlength="100" size="50" required placeholder="someone@somewhere.com" /></td>
+                    </tr>
+                    <tr>
+                        <td>Full Address: </td>
+                        <td><input type="text" name="fullAddress" id="fullAddress" maxlength="200" size="50" /></td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <td><input type="text" name="phone" id="phone" maxlength="12" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td>Is Active? </td>
+                        <td>
+                            <input type="radio" name="isActive" id="isActive" value="Y" required /> Yes
+                            <input type="radio" name="isActive" id="isActive" value="N" required /> No </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -36,6 +50,7 @@
             </fieldset>
         </form>
         <div id="result">&nbsp;</div>
+
     </body>
 </html>
 
@@ -44,6 +59,16 @@
 let form = document.getElementById('formStudent');
 let nameInput = document.getElementById('fullName');
 let emailInput = document.getElementById('email');
+let addressInput = document.getElementById('fullAddress');
+let phoneInput = document.getElementById('phone');
+var isActiveInput = "Z";
+
+for(var i=0; i<document.getElementsByName('isActive').length; i++){
+    if(document.getElementsByName('isActive')[i].checked){
+        isActiveInput = document.getElementsByName('isActive')[i].value;
+        break;
+    }
+}
 
 form.addEventListener('submit', function(e) {
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
@@ -53,17 +78,19 @@ form.addEventListener('submit', function(e) {
             document.getElementById("result").innerHTML = xmlhttp.responseText;
             console.log(xmlhttp.responseText);
         } else {
-            console.log("aaa");
+            console.log("An error was logged while submitting the register. Try it again, please.");
         }
     }
 
-
     xmlhttp.open("POST", "/students");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.send(JSON.stringify({"nameStudent": nameInput.value , "emailStudent": emailInput.value}));
-
-
-    
+    xmlhttp.send(JSON.stringify({
+                "FullName": nameInput.value, 
+                "Email": emailInput.value, 
+                "FullAddress": addressInput.value,
+                "Phone": phoneInput.value,
+                "IsActive": isActiveInput
+                }));    
 
     e.preventDefault();
 });
