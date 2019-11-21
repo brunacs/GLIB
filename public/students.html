@@ -34,8 +34,8 @@
                     <tr>
                         <td>Is Active? </td>
                         <td>
-                            <input type="radio" name="isActive" id="isActive" value="Y" required /> Yes
-                            <input type="radio" name="isActive" id="isActive" value="N" required /> No </td>
+                            <input type="radio" name="isActive" id="isActive" value="Y" required" /> Yes
+                            <input type="radio" name="isActive" id="isActive" value="N" required" /> No </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -61,24 +61,26 @@ let nameInput = document.getElementById('fullName');
 let emailInput = document.getElementById('email');
 let addressInput = document.getElementById('fullAddress');
 let phoneInput = document.getElementById('phone');
-var isActiveInput = "Z";
-
-for(var i=0; i<document.getElementsByName('isActive').length; i++){
-    if(document.getElementsByName('isActive')[i].checked){
-        isActiveInput = document.getElementsByName('isActive')[i].value;
-        break;
-    }
-}
+let isActiveInput;
 
 form.addEventListener('submit', function(e) {
+
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
     
+    for(var i=0; i<document.getElementsByName('isActive').length; i++){
+        if(document.getElementsByName('isActive')[i].checked){
+            isActiveInput = document.getElementsByName('isActive')[i].value;
+            console.log(isActiveInput);
+            break;
+        }
+    }
+
     xmlhttp.onreadystatechange = function() {
         if(this.readyState==4 && this.status==200) {
             document.getElementById("result").innerHTML = xmlhttp.responseText;
             console.log(xmlhttp.responseText);
         } else {
-            console.log("An error was logged while submitting the register. Try it again, please.");
+            console.log("An error was logged while submitting the register.");
         }
     }
 
