@@ -14,4 +14,4 @@ CREATE TABLE STUDENT (
 
 -- UPDATING A TABLE
 ALTER TABLE STUDENT ADD (FullAddress varchar(200) NULL, Phone varchar(12) NULL);
-ALTER TABLE STUDENT ADD IsActive varchar(100) NULL; -- Y: yes or N: no
+ALTER TABLE STUDENT ADD IsActive char(1) NOT NULL; -- Y: yes or N: no
