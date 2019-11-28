@@ -4,9 +4,25 @@ var mysql = require("../service/mysql");
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
+  console.log(req.query);
+  let fullName = "";
   try {
-    let result = await mysql.query('select * from student');
-    res.send(result[0]);
+    fullName = req.query.fullName;
+  } catch (error) {
+    
+  }
+  console.log(fullName);
+  try {
+    if(fullName=="") {
+      console.log("if");
+      let result = await mysql.query('select * from student');
+      res.send(result[0]);
+    } else {
+      console.log("else "+fullName);
+      let result = await mysql.query('select * from student where FullName like \'%'+fullName+'%\';');
+      res.send(result[0]);
+    }
+    //res.send(result[0]);
   } catch (error) {
    res.send(error); 
   }

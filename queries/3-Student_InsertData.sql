@@ -1,8 +1,156 @@
 USE GLIB;
 
--- INSERTING DATA IN A TABLE
--- INSERT	INTO STUDENT (FullName, Email, FullAddress, Phone, IsActive)
--- 		VALUES ('Bruna Costa e Silva', 'brunacs@gmail.com', '', '778-512-1979', 'Y');
-
 -- SELECTING / RETRIEVING DATA FROM A TABLE
-SELECT * FROM STUDENT;
+ SELECT count(*) FROM STUDENT;
+-- SELECT FullName FROM STUDENT where fulladdress like '%center%';
+
+-- INSERTING DATA IN A TABLE
+
+/*
+
+-- active students
+
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Graehme Canacott', 'gcanacott0@github.com', '891 Utah Center', '680-826-4574', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Allina Klemt', 'aklemt1@economist.com', '143 Truax Court', '653-986-8293', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Karla Bretelle', 'kbretelle2@plala.or.jp', '4 Walton Drive', '920-890-1856', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Bel Cordet', 'bcordet3@dell.com', '26776 Oak Center', '175-569-5337', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Stevie Sheeres', 'ssheeres4@google.de', '9098 Lien Terrace', '759-184-4777', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Peder Johnsey', 'pjohnsey5@ovh.net', '21062 Johnson Place', '820-580-8873', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Keven Thake', 'kthake6@mlb.com', '0 Bluejay Alley', '818-562-4995', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Rinaldo Madge', 'rmadge7@sphinn.com', '19130 Carioca Lane', '589-443-7484', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Hailee Portriss', 'hportriss8@boston.com', '7410 Sutteridge Terrace', '704-657-9670', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Sonja Canape', 'scanape9@reference.com', '5 Katie Alley', '760-428-5469', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Sarette Arkell', 'sarkella@ycombinator.com', '351 Daystar Street', '823-942-1012', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Marina Armstead', 'marmsteadb@woothemes.com', '606 Brickson Park Way', '577-733-9050', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Freddie Tree', 'ftreec@ihg.com', '0764 Bonner Plaza', '602-171-7771', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Darda Merlin', 'dmerlind@youtube.com', '0 Del Sol Circle', '241-140-1217', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Aida Rubinlicht', 'arubinlichte@wsj.com', '9755 Anhalt Lane', '238-772-5392', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Orville Carrack', 'ocarrackf@nhs.uk', '3598 Declaration Parkway', '186-303-3122', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Merrile Burman', 'mburmang@mediafire.com', '61616 Hovde Avenue', '921-764-6334', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Hyatt Juan', 'hjuanh@php.net', '71 Schlimgen Parkway', '462-172-5151', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Way Arundell', 'warundelli@sciencedaily.com', '69609 Del Sol Place', '643-299-9340', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Temple Mayne', 'tmaynej@joomla.org', '942 Monterey Circle', '899-623-8504', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Drugi Clarke-Williams', 'dclarkewilliamsk@virginia.edu', '5 Lukken Way', '142-355-9901', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Otho Haydock', 'ohaydockl@geocities.jp', '06023 Ludington Hill', '160-919-3844', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Renee Blasli', 'rblaslim@abc.net.au', '8 Sachtjen Terrace', '157-497-7992', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ethelred Drewett', 'edrewettn@tumblr.com', '7720 Manufacturers Drive', '854-341-0427', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ricca Dowzell', 'rdowzello@a8.net', '303 2nd Lane', '217-365-3843', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Silvain Sheara', 'sshearap@blogs.com', '5486 Gale Park', '106-145-1619', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Pieter Stotherfield', 'pstotherfieldq@skyrock.com', '83 Boyd Lane', '786-891-3482', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Katrina Manus', 'kmanusr@indiegogo.com', '524 Straubel Avenue', '567-457-4355', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Hayley Grigoriscu', 'hgrigoriscus@ameblo.jp', '88609 Talmadge Lane', '926-599-0788', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Reade Dibben', 'rdibbent@gmpg.org', '4963 Thackeray Park', '215-926-0611', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Gawain O''Drought', 'godroughtu@virginia.edu', '37 Thierer Lane', '460-175-3096', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Sarita Merchant', 'smerchantv@livejournal.com', '31766 Mallard Crossing', '408-114-2485', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Eveleen Vitte', 'evittew@1688.com', '0 Heffernan Parkway', '327-328-6793', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Neala Clementucci', 'nclementuccix@eepurl.com', '42044 Park Meadow Avenue', '870-102-6140', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Rosemonde Ferriby', 'rferribyy@howstuffworks.com', '1 7th Plaza', '371-575-6643', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Willi Scalia', 'wscaliaz@ezinearticles.com', '1565 Kensington Road', '305-955-2129', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Lisetta Downing', 'ldowning10@ycombinator.com', '145 Moose Point', '772-379-5069', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ranna Pocock', 'rpocock11@flickr.com', '2835 Lake View Road', '803-697-4272', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Cassie Gooderridge', 'cgooderridge12@bloglines.com', '35133 Jay Way', '336-508-3885', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Dorena Roddy', 'droddy13@reference.com', '0 Petterle Point', '235-816-5789', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Noland Byrkmyr', 'nbyrkmyr14@php.net', '576 Scofield Parkway', '707-241-4074', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Kelli Gotobed', 'kgotobed15@eventbrite.com', '6 Johnson Crossing', '489-915-7772', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Marnia Crockatt', 'mcrockatt16@jugem.jp', '27 Northfield Avenue', '971-930-7576', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Oberon Cavanagh', 'ocavanagh17@ucla.edu', '70480 Karstens Park', '642-714-3442', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Mack Haysar', 'mhaysar18@wix.com', '48 Spaight Road', '373-875-3610', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Koenraad Basant', 'kbasant19@dailymail.co.uk', '74 Transport Lane', '889-402-6404', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Broderic De Luna', 'bde1a@spiegel.de', '67 Barby Circle', '144-440-1487', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Dionne Tolliday', 'dtolliday1b@bloglines.com', '926 Garrison Lane', '410-716-8628', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ardyth Biset', 'abiset1c@disqus.com', '2 Schmedeman Lane', '387-222-2139', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Jannelle Worpole', 'jworpole1d@live.com', '86 Victoria Drive', '116-648-8726', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Loralyn Kibblewhite', 'lkibblewhite1e@spotify.com', '40298 Knutson Pass', '776-425-9756', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Pietrek Breslane', 'pbreslane1f@wisc.edu', '97753 High Crossing Point', '837-233-9354', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Olivie Camelli', 'ocamelli1g@google.com.au', '4026 Burning Wood Point', '360-109-7379', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Timothee Santer', 'tsanter1h@pagesperso-orange.fr', '84203 High Crossing Crossing', '195-463-4122', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Carson Mollon', 'cmollon1i@privacy.gov.au', '41 Linden Alley', '596-999-7874', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Melodee Grzelak', 'mgrzelak1j@go.com', '6 Vernon Parkway', '854-927-6841', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Blinni Zaczek', 'bzaczek1k@technorati.com', '65873 Commercial Place', '470-399-8217', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Nikola Perrott', 'nperrott1l@symantec.com', '19561 Amoth Place', '810-598-0354', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Dorisa Kirmond', 'dkirmond1m@redcross.org', '94 Green Way', '854-721-2449', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Brandais Strathe', 'bstrathe1n@ibm.com', '4 Dryden Court', '294-743-6136', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Benjie O''Connel', 'boconnel1o@nhs.uk', '95896 Westend Road', '821-741-4124', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Colas Ginity', 'cginity1p@youtu.be', '12152 Sullivan Avenue', '827-673-0771', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Pearl Philippeaux', 'pphilippeaux1q@bing.com', '0 Browning Avenue', '993-405-2532', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Malcolm Manneville', 'mmanneville1r@whitehouse.gov', '88 Delaware Court', '635-534-9450', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Shaw Deeming', 'sdeeming1s@amazonaws.com', '09 Mcguire Place', '310-259-4383', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Conroy Kleeman', 'ckleeman1t@reference.com', '70 Northport Street', '369-431-5911', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Dulcine Deabill', 'ddeabill1u@china.com.cn', '442 Barnett Junction', '366-315-9964', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Chanda Dey', 'cdey1v@freewebs.com', '7671 Mccormick Drive', '614-111-0136', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Davie Jiggens', 'djiggens1w@newyorker.com', '491 Harper Drive', '332-787-7050', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Nicola Kimmins', 'nkimmins1x@vinaora.com', '397 Loeprich Junction', '735-918-3348', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Morlee Thomasen', 'mthomasen1y@xrea.com', '253 Hoepker Park', '597-177-0777', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Noelle Delacote', 'ndelacote1z@histats.com', '40 Del Sol Alley', '725-643-5304', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Robbie McLagain', 'rmclagain20@rediff.com', '709 Havey Pass', '966-505-4622', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Avery Molesworth', 'amolesworth21@howstuffworks.com', '8 Mayfield Crossing', '272-191-8026', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Maggi Bonwick', 'mbonwick22@paginegialle.it', '7 Carberry Terrace', '966-507-0201', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Erroll Rampton', 'erampton23@bbb.org', '0 Dexter Alley', '408-835-1950', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Aliza Bartens', 'abartens24@dell.com', '5665 Brentwood Plaza', '172-754-7571', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Vanny Kenaway', 'vkenaway25@ox.ac.uk', '2 Bartelt Place', '698-769-3470', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Jordain Wythe', 'jwythe26@cam.ac.uk', '25735 Charing Cross Court', '917-593-2868', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Chryste Worms', 'cworms27@oaic.gov.au', '23 Claremont Place', '487-394-7541', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Kaiser Thayre', 'kthayre28@bravesites.com', '44538 Clemons Pass', '427-161-2637', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Shannon Spurling', 'sspurling29@livejournal.com', '8 Sloan Center', '125-401-7189', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Blinni Copnall', 'bcopnall2a@eepurl.com', '80 Hoffman Court', '795-554-6310', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Chrysler Matschek', 'cmatschek2b@cisco.com', '421 Dahle Place', '409-211-5531', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Gardie Domico', 'gdomico2c@va.gov', '655 Wayridge Avenue', '762-260-7353', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Bogart MacLure', 'bmaclure2d@cocolog-nifty.com', '9 Clemons Street', '158-371-3143', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Natal Droghan', 'ndroghan2e@woothemes.com', '14 Calypso Point', '581-906-1709', 'Y');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Chrotoem Sawers', 'csawers2f@dyndns.org', '0093 Calypso Junction', '854-400-8550', 'Y');
+
+-- not active students
+
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Kariotta Saltwell', 'ksaltwell0@prlog.org', '6444 Talmadge Terrace', '866-274-7190', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Tripp Reaman', 'treaman1@blogtalkradio.com', '1293 Garrison Road', '217-402-8051', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Berenice Broderick', 'bbroderick2@a8.net', '180 Pearson Pass', '627-403-0683', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Valle Dix', 'vdix3@about.me', '1950 Buena Vista Avenue', '488-477-1118', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Tootsie Wheelband', 'twheelband4@rediff.com', '34157 Russell Court', '388-631-0390', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Clementius Connerly', 'cconnerly5@sciencedirect.com', '071 Park Meadow Road', '713-299-6533', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Noelani Jarrad', 'njarrad6@artisteer.com', '839 Hanson Crossing', '865-805-5417', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Rowen Dyet', 'rdyet7@google.es', '39730 Lillian Hill', '659-209-0877', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Eugenie Leverington', 'eleverington8@symantec.com', '17512 Ilene Road', '901-801-7820', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Zelda Hellard', 'zhellard9@mapy.cz', '9 Shasta Road', '881-136-4732', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Janenna Shillabeare', 'jshillabearea@list-manage.com', '857 Melby Circle', '983-982-6786', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Claretta Turnell', 'cturnellb@bravesites.com', '20248 Green Ridge Circle', '112-692-1317', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Lolly De Ruggiero', 'ldec@addtoany.com', '87608 Pond Point', '440-493-9395', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Emmerich Collingwood', 'ecollingwoodd@cisco.com', '59842 Maple Crossing', '178-391-5338', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ellette Skett', 'eskette@live.com', '2 South Place', '881-649-9230', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Addy Adie', 'aadief@mtv.com', '9836 School Crossing', '253-425-2999', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Decca Stonall', 'dstonallg@themeforest.net', '0073 Dapin Hill', '281-989-5800', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Griswold Carne', 'gcarneh@nydailynews.com', '507 Toban Road', '994-591-9082', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Carlee Gratrix', 'cgratrixi@springer.com', '6 Village Green Crossing', '839-736-2850', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Jacquenette Trussler', 'jtrusslerj@trellian.com', '15 Washington Place', '843-175-4057', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Nathanial Hindsberg', 'nhindsbergk@samsung.com', '20 Veith Junction', '835-949-6388', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Zachary Flaherty', 'zflahertyl@skyrock.com', '6641 Forest Dale Alley', '991-389-1366', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Abigael Jean', 'ajeanm@adobe.com', '7 Gateway Plaza', '965-234-2275', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Boniface Capelen', 'bcapelenn@phoca.cz', '23 Park Meadow Terrace', '704-705-7974', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Theadora Wain', 'twaino@shinystat.com', '4118 Stang Trail', '728-594-2319', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Celestina Dudliston', 'cdudlistonp@si.edu', '0173 Alpine Center', '981-749-7913', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Elonore Baldrick', 'ebaldrickq@hatena.ne.jp', '8790 Graceland Trail', '501-694-8673', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Lucas Veevers', 'lveeversr@wikia.com', '08 Maple Wood Hill', '853-417-5813', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Maiga Twinbourne', 'mtwinbournes@networkadvertising.org', '401 Green Hill', '107-149-4223', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Germana Iacopo', 'giacopot@ustream.tv', '128 Sheridan Park', '811-151-7450', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Rebecca Clandillon', 'rclandillonu@ovh.net', '4 Leroy Drive', '870-346-8505', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Zebedee Stump', 'zstumpv@naver.com', '36832 Messerschmidt Court', '632-912-2454', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Katherine Hayton', 'khaytonw@aboutads.info', '5183 Autumn Leaf Alley', '972-232-9365', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('King Bernucci', 'kbernuccix@usgs.gov', '0348 Monterey Way', '216-872-0620', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Sharai Holtham', 'sholthamy@dot.gov', '474 John Wall Drive', '279-798-4265', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Barthel Presslie', 'bpressliez@360.cn', '67 Commercial Parkway', '361-166-3642', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Devondra Hilbourne', 'dhilbourne10@arstechnica.com', '88 Beilfuss Avenue', '201-218-7590', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ruby Wildman', 'rwildman11@vk.com', '2276 Monument Lane', '743-498-6671', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Daveta Burkin', 'dburkin12@fda.gov', '9118 Moland Road', '620-396-0129', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ginnie Montier', 'gmontier13@disqus.com', '91540 Grayhawk Road', '930-155-5018', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Fransisco Bunyard', 'fbunyard14@jugem.jp', '168 Farwell Terrace', '278-840-4467', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Berti Labern', 'blabern15@dmoz.org', '82 Dwight Alley', '675-259-4853', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Tedie Gyrgorcewicx', 'tgyrgorcewicx16@taobao.com', '47981 North Road', '923-539-6308', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Benedicto Camel', 'bcamel17@rakuten.co.jp', '2799 Bunting Avenue', '121-937-9284', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Amargo Cartlidge', 'acartlidge18@sphinn.com', '21220 Nevada Drive', '285-770-3586', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Iorgo Eilert', 'ieilert19@about.com', '0 Sage Lane', '588-593-6901', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Ebba Lumby', 'elumby1a@over-blog.com', '066 Park Meadow Trail', '813-226-0764', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Chris Gorringe', 'cgorringe1b@hud.gov', '354 Declaration Street', '620-123-0677', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Saundra Auston', 'sauston1c@wunderground.com', '5053 Marcy Junction', '986-401-1245', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Codie Randales', 'crandales1d@topsy.com', '1246 Commercial Lane', '325-876-9974', 'N');
+insert into Student (FullName, Email, FullAddress, Phone, IsActive) values ('Iosep Gribbon', 'igribbon1e@hugedomains.com', '98 Stuart Parkway', '242-783-5513', 'N');
+
+-- */

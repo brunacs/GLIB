@@ -50,6 +50,11 @@
             </fieldset>
         </form>
         <div id="result">&nbsp;</div>
+        <div>
+            <input type="input" id="txtSearch" />
+            <button id="btnSearch">Search</button>
+            <table id="tableStudents"></table>
+        </div>
 
     </body>
 </html>
@@ -75,15 +80,6 @@ form.addEventListener('submit', function(e) {
         }
     }
 
-    xmlhttp.onreadystatechange = function() {
-        if(this.readyState==4 && this.status==200) {
-            document.getElementById("result").innerHTML = xmlhttp.responseText;
-            console.log(xmlhttp.responseText);
-        } else {
-            console.log("An error was logged while submitting the register.");
-        }
-    }
-
     xmlhttp.open("POST", "/students");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(JSON.stringify({
@@ -92,8 +88,55 @@ form.addEventListener('submit', function(e) {
                 "FullAddress": addressInput.value,
                 "Phone": phoneInput.value,
                 "IsActive": isActiveInput
-                }));    
+    }));
 
+    xmlhttp.onreadystatechange = function() {
+        if(this.readyState==4 && this.status==200) {
+            document.getElementById("result").innerHTML = xmlhttp.responseText;
+            console.log(xmlhttp.responseText);
+        } else {
+            //console.log("An error was logged while submitting the register.");
+        }
+    }    
     e.preventDefault();
 });
+
+document.getElementById("btnSearch").addEventListener('click', function() {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "/students?fullName="+document.getElementById("txtSearch").value);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function() {
+        if(this.readyState==4 && this.status==200) {
+            //document.getElementById("result").innerHTML = xmlhttp.responseText;
+            parseStudentToTable(xmlhttp.responseText);
+        } else {
+            //console.log("An error was logged while submitting the register.");
+        }
+    }
+});
+
+function parseStudentToTable(response) {
+    let students = JSON.parse(response);
+    console.log(response);
+    console.log(students);
+    let table = document.getElementById("tableStudents");
+    while(table.childNodes.length>0) {
+        table.childNodes[0].remove();
+    }
+    //console.log(students);
+    for(let student of students) {
+        //console.log(student);
+        let row = table.insertRow();
+        let idCell = row.insertCell();
+        idCell.innerText = student.StudentId;
+        let nameCell = row.insertCell();
+        nameCell.innerText = student.FullName;
+        let emailCell = row.insertCell();
+        emailCell.innerText = student.Email;
+
+    }
+
+}
 </script>
