@@ -1,17 +1,17 @@
 -- USING THE DATABASE
 USE GLIB;
 
--- DROPPING A TABLE, IF EXISTS
--- DROP TABLE IF EXISTS Users;
+--	DROPPING A TABLE, IF EXISTS
+DROP TABLE IF EXISTS Users;
 
 -- DROPPING A TABLE, IF EXISTS
--- DROP TABLE IF EXISTS Programs;
+ DROP TABLE IF EXISTS Programs;
 
 -- DROPPING A TABLE, IF EXISTS
--- DROP TABLE IF EXISTS Classes;
+DROP TABLE IF EXISTS Classes;
 
 -- DROPPING A TABLE, IF EXISTS
--- DROP TABLE IF EXISTS ClassMates;
+ DROP TABLE IF EXISTS ClassMates;
 
 -- CREATING A TABLE
 CREATE TABLE Users (
@@ -48,7 +48,7 @@ CREATE TABLE ClassMates (
   ClassId int NOT NULL,
   Students int Not Null,
   ProgramId int, 
-  ttend int,
+  Attend int,
   StudentStat varchar(100) Not Null,
   CONSTRAINT ClassMates_PK PRIMARY KEY (ClassId,Students)
 );
