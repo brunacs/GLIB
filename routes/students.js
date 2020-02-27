@@ -33,7 +33,7 @@ router.get('/', async function(req, res, next) {
 router.post('/', async function(req, res, next) {
   console.log(req.body);
   let [row, field] = await mysql.query('insert into student set ?',req.body);
-  res.send({"id":row.insertId});
+  res.send({"The student was submited sucessfully. The ID is:":row.insertId});
 });
 
 module.exports = router;
